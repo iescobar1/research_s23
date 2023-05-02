@@ -1,0 +1,13 @@
+Circuit State
+G10gat: X
+G11gat: X
+G16gat: X
+G19gat: X
+G1gat: X
+G22gat: X
+G23gat: X
+G2gat: X
+G3gat: X
+G6gat: X
+G7gat: X
+$

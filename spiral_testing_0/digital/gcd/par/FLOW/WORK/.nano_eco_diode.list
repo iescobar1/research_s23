@@ -1,0 +1,3 @@
+FORMATVERSION 1
+ADDINST ANTENNA inst_datapath/DIODE_1 1 addPortAsNeeded
+INSTTERM A op_a_int[0] -

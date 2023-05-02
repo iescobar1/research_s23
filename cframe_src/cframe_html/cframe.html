@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Documentation &mdash; cframe 0.3 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="cframe 0.3 documentation" href="index.html"/>
+        <link rel="next" title="Examples" href="examples.html"/>
+        <link rel="prev" title="ISCAS89 Format" href="iscas.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> cframe</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iscas.html">ISCAS89 Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iscas.html#comments">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iscas.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iscas.html#gates">Gates</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">cframe</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/cframe.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="module-cframe">
+<span id="documentation"></span><h1>Documentation<a class="headerlink" href="#module-cframe" title="Permalink to this headline">¶</a></h1>
+<p><em>cframe</em> is a Python port of the C++ CFRAME library used in 18-765</p>
+<dl class="class">
+<dt id="cframe.BridgeFault">
+<em class="property">class </em><code class="descclassname">cframe.</code><code class="descname">BridgeFault</code><span class="sig-paren">(</span><em>sites</em>, <em>bridgetype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#BridgeFault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.BridgeFault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>BridgeFault implements a representation of a bridge fault.</p>
+<dl class="docutils">
+<dt>Supported bridge fault types are stored as the class attribute BridgeFault.types:</dt>
+<dd><ul class="first last simple">
+<li>AND</li>
+<li>OR</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="cframe.BridgeFault.sites">
+<code class="descname">sites</code><a class="headerlink" href="#cframe.BridgeFault.sites" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple</em></p>
+<p>Tuple of strings corresponding to the names of the two (or more)
+locations of the bridge fault.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.BridgeFault.bridgetype">
+<code class="descname">bridgetype</code><a class="headerlink" href="#cframe.BridgeFault.bridgetype" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em></p>
+<p>String representing the type of bridge fault, should be one of
+the types in BridgeFault.types.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.BridgeFault.flag">
+<code class="descname">flag</code><a class="headerlink" href="#cframe.BridgeFault.flag" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em></p>
+<p>Boolean flag used to track status of BridgeFaults during the course
+of some operation.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="cframe.BridgeFault.read_bridges">
+<em class="property">static </em><code class="descname">read_bridges</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#BridgeFault.read_bridges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.BridgeFault.read_bridges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a bridge fault file into a list of bridge faults.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>str</em>) &#8211; Name of file containing bridge faults.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of BridgeFaults corresponding to the bridge faults in the file.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.BridgeFault.types">
+<code class="descname">types</code><em class="property"> = ['AND', 'OR']</em><a class="headerlink" href="#cframe.BridgeFault.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cframe.Circuit">
+<em class="property">class </em><code class="descclassname">cframe.</code><code class="descname">Circuit</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Circuit implements an ISCAS-compatible circuit.</p>
+<p>This class provides functions and data structures for handling a collection
+of Gate objects that represent an ISCAS circuit. The heavy lifting is
+mostly done in the Roth and Gate objects, with Circuit providing convenient
+interfaces and tracking the important features.</p>
+<dl class="attribute">
+<dt id="cframe.Circuit.inputs">
+<code class="descname">inputs</code><a class="headerlink" href="#cframe.Circuit.inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em></p>
+<p>List of gate names corresponding to the inputs of the
+circuit.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Circuit.gatemap">
+<code class="descname">gatemap</code><a class="headerlink" href="#cframe.Circuit.gatemap" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>dict</em></p>
+<p>Dictionary mapping the names (str) of gates to the gate
+objects (Gate).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Circuit.outputs">
+<code class="descname">outputs</code><a class="headerlink" href="#cframe.Circuit.outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em></p>
+<p>List of the gate names corresponding to the outputs of
+the circuit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.add_gates">
+<code class="descname">add_gates</code><span class="sig-paren">(</span><em>gates</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.add_gates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.add_gates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a list of gate objects to the circuit.</p>
+<p>All of the gates provided are added to the circuit. Missing fanin
+connections will be discovered and result in an exception (see below).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gates</strong> (<em>list</em>) &#8211; List of Gate objects to be added to the circuit.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">KeyError</span></code> &#8211;
+If any fanin connections are attempted to gates that do
+not either already exist in the circuit or are being added as
+part of the current operation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate and update each gate in the circuit from inputs to outputs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">RuntimeError</span></code> &#8211;
+If circuit contains a feedback loop or is missing a
+path to an output.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.get_outputs">
+<code class="descname">get_outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.get_outputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.get_outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve values on the outputs of the circuit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Tuple of Roth values on the outputs of the circuit (in order).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.print_state">
+<code class="descname">print_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.print_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.print_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print circuit state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.print_summary">
+<code class="descname">print_summary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.print_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.print_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print circuit summary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.read_iscas">
+<code class="descname">read_iscas</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.read_iscas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.read_iscas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read ISCAS file into circuit.</p>
+<p>Note that erroneous ISCAS files may not cause this function to fail.
+This function should fail on most malformed lines (missing parens,
+etc.), non-ISCAS gates, and missing fanin gates. Other issues, such as
+feedback loops, will not be caught. It is recommended to verify
+both the original ISCAS file and the Circuit object returned by this
+function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>str</em>) &#8211; Name of the ISCAS file to read.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.reset_flags">
+<code class="descname">reset_flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.reset_flags"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.reset_flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set gate flags to False for all gates in the circuit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.reset_values">
+<code class="descname">reset_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.reset_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.reset_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set logic value for all gates in the circuit to &#8216;X&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.set_inputs">
+<code class="descname">set_inputs</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.set_inputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.set_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set circuit inputs to the provided values.</p>
+<p>Note the implicit order; the value in iterable values will be mapped
+in order to the gates in the Circuit.inputs list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>values</strong> (<em>iterable</em>) &#8211; List of Roth values to be applied (in order) to
+the circuit inputs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">IndexError</span></code> &#8211;
+If the number of values provided does not match the
+number of circuit inputs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Circuit.write_state">
+<code class="descname">write_state</code><span class="sig-paren">(</span><em>outfile</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Circuit.write_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Circuit.write_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write circuit state to file (Project 2 format).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>outfile</strong> (<em>file pointer</em>) &#8211; Open file for writing.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cframe.Command">
+<em class="property">class </em><code class="descclassname">cframe.</code><code class="descname">Command</code><a class="reference internal" href="_modules/cframe.html#Command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>Command represents commands read from a file as an enumerated class.</p>
+<dl class="docutils">
+<dt>There are 6 recognized commands as listed below:</dt>
+<dd><ul class="first last simple">
+<li>Fault</li>
+<li>Imply</li>
+<li>Dfront</li>
+<li>Jfront</li>
+<li>Xpath</li>
+<li>Display</li>
+</ul>
+</dd>
+</dl>
+<dl class="staticmethod">
+<dt id="cframe.Command.read_commands">
+<em class="property">static </em><code class="descname">read_commands</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Command.read_commands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Command.read_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a command file.</p>
+<p>This function yields each command in order as they are read from
+the provided file. The yielded result is a tuple of size 1 or 3,
+depending on the specified command:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Fault or Imply: (Command, gatename (str), val (Roth))</li>
+<li>Other: (Command,)</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>str</em>) &#8211; Name of the command file to read.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><em>tuple</em> &#8211;
+A tuple of length 1 or 3 depending on the Command.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cframe.Fault">
+<em class="property">class </em><code class="descclassname">cframe.</code><code class="descname">Fault</code><span class="sig-paren">(</span><em>value</em>, <em>stem</em>, <em>branch=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Fault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Fault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Fault implements a representation of a single stuck line fault.</p>
+<p>This class is a lightweight representation of a single stuck line fault.
+Only gate names (not references to the actual Gate objects) should be
+stored; as such, faults represented by this class require an external data
+structure (such as the gatemap of a Circuit object) in order to have full
+meaning.</p>
+<dl class="attribute">
+<dt id="cframe.Fault.stem">
+<code class="descname">stem</code><a class="headerlink" href="#cframe.Fault.stem" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em></p>
+<p>Name corresponding to the stem line of the fault.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Fault.branch">
+<code class="descname">branch</code><a class="headerlink" href="#cframe.Fault.branch" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em></p>
+<p>Name corresponding to the branch line of the fault. If
+None, the fault is a stem line fault; otherwise the fault is a branch
+line fault.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Fault.value">
+<code class="descname">value</code><a class="headerlink" href="#cframe.Fault.value" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Roth</em></p>
+<p>Roth object representing the stuck value of the line.
+Should be either Roth.Zero or Roth.One.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Fault.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Fault.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Fault.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create concise string representing fault.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String representing fault.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Fault.is_branch">
+<code class="descname">is_branch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Fault.is_branch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Fault.is_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return boolean indicating if fault is a branch line fault.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if fault is a branch line fault.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cframe.FaultClass">
+<em class="property">class </em><code class="descclassname">cframe.</code><code class="descname">FaultClass</code><span class="sig-paren">(</span><em>fault</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#FaultClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.FaultClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>FaultClass implements a representation of a fault class.</p>
+<p>This class is a lightweight representation of a single fault class with its
+equivalence and dominance relationships.</p>
+<dl class="attribute">
+<dt id="cframe.FaultClass.equivalent">
+<code class="descname">equivalent</code><a class="headerlink" href="#cframe.FaultClass.equivalent" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em></p>
+<p>List of equivalent Fault objects.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.FaultClass.dominated">
+<code class="descname">dominated</code><a class="headerlink" href="#cframe.FaultClass.dominated" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em></p>
+<p>List of dominate FaultClass objects.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.FaultClass.add_dominated">
+<code class="descname">add_dominated</code><span class="sig-paren">(</span><em>domfclass</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#FaultClass.add_dominated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.FaultClass.add_dominated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a dominated fault class to the current fault class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>domfclass</strong> (<a class="reference internal" href="#cframe.FaultClass" title="cframe.FaultClass"><em>FaultClass</em></a>) &#8211; Dominated fault class to be added.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+If domfclass is not a FaultClass object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.FaultClass.add_equivalent">
+<code class="descname">add_equivalent</code><span class="sig-paren">(</span><em>eqfault</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#FaultClass.add_equivalent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.FaultClass.add_equivalent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an equivalent fault to the fault class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>eqfault</strong> (<a class="reference internal" href="#cframe.Fault" title="cframe.Fault"><em>Fault</em></a>) &#8211; Equivalent fault to be added.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+If eqfault is not a Fault object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.FaultClass.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>filep</em>, <em>level=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#FaultClass.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.FaultClass.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write fault class contents to file.</p>
+<p>Note: this function will recursively print out all of the dominated
+FaultClass objects. The &#8216;level&#8217; argument is used to determine the
+proper indentation, and should only be used when recursively printing
+dominated FaultClass objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filep</strong> (<em>file object</em>) &#8211; Opened file to which fault class will be
+written.</li>
+<li><strong>level</strong> (<em>int</em>) &#8211; Integer that determines indentation level in the printed
+output (default 0). The default value should almost always be used
+when calling this function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cframe.Gate">
+<em class="property">class </em><code class="descclassname">cframe.</code><code class="descname">Gate</code><span class="sig-paren">(</span><em>name</em>, <em>gatetype</em>, <em>fanin=()</em>, <em>fanout=()</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Gate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Gate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Gate implements an ISCAS-compatible gate.</p>
+<dl class="docutils">
+<dt>Supported gate types are stored as the class attribute Gate.types:</dt>
+<dd><ul class="first last simple">
+<li>AND</li>
+<li>NAND</li>
+<li>OR</li>
+<li>NOR</li>
+<li>XOR</li>
+<li>XNOR</li>
+<li>BUFF</li>
+<li>NOT</li>
+<li>DFF</li>
+<li>INPUT</li>
+<li>UNDEFINED</li>
+</ul>
+</dd>
+</dl>
+<p>Note: DFF is currently a placeholder (has no functionality).</p>
+<dl class="attribute">
+<dt id="cframe.Gate.name">
+<code class="descname">name</code><a class="headerlink" href="#cframe.Gate.name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em></p>
+<p>Name of the gate, also corresponds to the signal line
+driven by the gate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Gate.gatetype">
+<code class="descname">gatetype</code><a class="headerlink" href="#cframe.Gate.gatetype" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em></p>
+<p>String representing the type of gate, should be one
+of the types in Gate.types.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Gate.fanin">
+<code class="descname">fanin</code><a class="headerlink" href="#cframe.Gate.fanin" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em></p>
+<p>List of gate names representing the fanin to the current
+gate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Gate.fanout">
+<code class="descname">fanout</code><a class="headerlink" href="#cframe.Gate.fanout" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em></p>
+<p>List of gate names representing the fanout of the current
+gate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Gate.value">
+<code class="descname">value</code><a class="headerlink" href="#cframe.Gate.value" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Roth</em></p>
+<p>Roth value representing current state of the gate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Gate.output">
+<code class="descname">output</code><a class="headerlink" href="#cframe.Gate.output" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em></p>
+<p>Boolean flag indicating whether gate is a primary output.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Gate.flag">
+<code class="descname">flag</code><a class="headerlink" href="#cframe.Gate.flag" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em></p>
+<p>Boolean flag used to keep track of whether a gate has been
+processed during the course of some operation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cframe.Gate.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>ckt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Gate.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Gate.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate current gate based on circuit state.</p>
+<p>Note that this function both updates the value of the current gate and
+returns the new value based on the evaluation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ctk</strong> (<a class="reference internal" href="#cframe.Circuit" title="cframe.Circuit"><em>Circuit</em></a>) &#8211; Circuit containing current gate and all fanin gates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Updated Roth value of current gate based on evaluation of
+the fanin states.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#cframe.Roth" title="cframe.Roth">Roth</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">KeyError</span></code> &#8211;
+If current gatetype is not in Gate.types.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cframe.Gate.types">
+<code class="descname">types</code><em class="property"> = ['AND', 'NAND', 'OR', 'NOR', 'XOR', 'XNOR', 'BUFF', 'NOT', 'DFF', 'INPUT', 'UNDEFINED']</em><a class="headerlink" href="#cframe.Gate.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cframe.Roth">
+<em class="property">class </em><code class="descclassname">cframe.</code><code class="descname">Roth</code><a class="reference internal" href="_modules/cframe.html#Roth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Roth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>Roth implements the Roth 5-value algebra as an enumerated class.</p>
+<dl class="docutils">
+<dt>The 5 values in the Roth algebra are:</dt>
+<dd><ul class="first last simple">
+<li>Zero</li>
+<li>One</li>
+<li>D</li>
+<li>D_b</li>
+<li>X</li>
+</ul>
+</dd>
+</dl>
+<p>Each Roth value has corresponding member of this class with a name
+(exactly as above) and integer value (used to create lookup tables for
+operations).</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Roth</span><span class="o">.</span><span class="n">One</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">Roth.One</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">One</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="cframe.Roth.invert">
+<em class="property">static </em><code class="descname">invert</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Roth.invert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Roth.invert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invert the provided Roth value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<a class="reference internal" href="#cframe.Roth" title="cframe.Roth"><em>Roth</em></a>) &#8211; Roth value to invert.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The inverted Roth value.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#cframe.Roth" title="cframe.Roth">Roth</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="cframe.Roth.operate">
+<em class="property">static </em><code class="descname">operate</code><span class="sig-paren">(</span><em>optype</em>, <em>inputs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#Roth.operate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.Roth.operate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform operation on collection of Roth values.</p>
+<p>Supported operations are AND, OR, and XOR. The operation is accumulated
+across all Roth values in the provided iterable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>optype</strong> (<em>str</em>) &#8211; String indicating which operation to perform.</li>
+<li><strong>inputs</strong> (<em>iterable</em>) &#8211; Iterable collection of Roth values.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Operation result.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#cframe.Roth" title="cframe.Roth">Roth</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">KeyError</span></code> &#8211;
+If optype is not a supported operation (AND, OR, XOR).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cframe.read_testset">
+<code class="descclassname">cframe.</code><code class="descname">read_testset</code><span class="sig-paren">(</span><em>testfile</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cframe.html#read_testset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cframe.read_testset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read testset from file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testfile</strong> (<em>str</em>) &#8211; Name of file containing testset.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of tuples of Roth values, each tuple representing a single test.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iscas.html" class="btn btn-neutral" title="ISCAS89 Format"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Benjamin Niewenhuis.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

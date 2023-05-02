@@ -1,0 +1,42 @@
+[02/10 17:40:50      0s] 
+[02/10 17:40:50      0s] Cadence Innovus(TM) Implementation System.
+[02/10 17:40:50      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[02/10 17:40:50      0s] 
+[02/10 17:40:50      0s] Version:	v19.10-p002_1, built Fri Apr 19 15:18:11 PDT 2019
+[02/10 17:40:50      0s] Options:	-execute writeFlowTemplate -directory .; exit 
+[02/10 17:40:50      0s] Date:		Fri Feb 10 17:40:50 2023
+[02/10 17:40:50      0s] Host:		ece029.ece.local.cmu.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (14cores*56cpus*Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz 35840KB)
+[02/10 17:40:50      0s] OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+[02/10 17:40:50      0s] 
+[02/10 17:40:50      0s] License:
+[02/10 17:40:50      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[02/10 17:40:50      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[02/10 17:41:14     10s] @(#)CDS: Innovus v19.10-p002_1 (64bit) 04/19/2019 15:18 (Linux 2.6.32-431.11.2.el6.x86_64)
+[02/10 17:41:14     10s] @(#)CDS: NanoRoute 19.10-p002_1 NR190418-1643/19_10-UB (database version 18.20, 458.7.1) {superthreading v1.51}
+[02/10 17:41:14     10s] @(#)CDS: AAE 19.10-b002 (64bit) 04/19/2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[02/10 17:41:14     10s] @(#)CDS: CTE 19.10-p002_1 () Apr 19 2019 06:39:48 ( )
+[02/10 17:41:14     10s] @(#)CDS: SYNTECH 19.10-b001_1 () Apr  4 2019 03:00:51 ( )
+[02/10 17:41:14     10s] @(#)CDS: CPE v19.10-p002
+[02/10 17:41:14     10s] @(#)CDS: IQuantus/TQuantus 19.1.0-e101 (64bit) Thu Feb 28 10:29:46 PST 2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[02/10 17:41:14     10s] @(#)CDS: OA 22.60-p012 Thu Dec 20 13:36:08 2018
+[02/10 17:41:14     10s] @(#)CDS: SGN 18.10-d003 (18-Jul-2018) (64 bit executable, Qt5.9.1)
+[02/10 17:41:14     10s] @(#)CDS: RCDB 11.14.18
+[02/10 17:41:14     10s] @(#)CDS: STYLUS 19.10-b001_1 (03/15/2019 08:18 PDT)
+[02/10 17:41:14     10s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_24486_ece029.ece.local.cmu.edu_iescobar_lJBABf.
+
+[02/10 17:41:14     10s] Change the soft stacksize limit to 0.2%RAM (515 mbytes). Set global soft_stack_size_limit to change the value.
+[02/10 17:41:16     10s] 
+[02/10 17:41:16     10s] **INFO:  MMMC transition support version v31-84 
+[02/10 17:41:16     10s] 
+[02/10 17:41:16     10s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[02/10 17:41:16     10s] <CMD> suppressMessage ENCEXT-2799
+[02/10 17:41:16     10s] <CMD> getVersion
+[02/10 17:41:17     10s] [INFO] Loading PVS 16.15 fill procedures
+[02/10 17:41:17     11s] Executing cmd 'writeFlowTemplate -directory .; exit' ...
+[02/10 17:41:17     11s] <CMD> writeFlowTemplate -directory .
+[02/10 17:41:17     11s] Saved Foundation Flow Templates to .
+[02/10 17:41:19     12s] 
+[02/10 17:41:19     12s] *** Memory Usage v#1 (Current mem = 736.852M, initial mem = 264.707M) ***
+[02/10 17:41:19     12s] *** Message Summary: 0 warning(s), 0 error(s)
+[02/10 17:41:19     12s] 
+[02/10 17:41:19     12s] --- Ending "Innovus" (totcpu=0:00:12.5, real=0:00:29.0, mem=736.9M) ---

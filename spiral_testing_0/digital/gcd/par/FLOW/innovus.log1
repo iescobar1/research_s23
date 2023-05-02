@@ -1,0 +1,29 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.10-p002_1, built Fri Apr 19 15:18:11 PDT 2019
+Options:	-execute writeFlowTemplate -directory .; exit 
+Date:		Fri Feb 10 17:40:50 2023
+Host:		ece029.ece.local.cmu.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (14cores*56cpus*Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz 35840KB)
+OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (515 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 16.15 fill procedures
+Executing cmd 'writeFlowTemplate -directory .; exit' ...
+<CMD> writeFlowTemplate -directory .
+Saved Foundation Flow Templates to .
+
+*** Memory Usage v#1 (Current mem = 736.852M, initial mem = 264.707M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:12.5, real=0:00:29.0, mem=736.9M) ---
