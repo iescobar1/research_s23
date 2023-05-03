@@ -75,11 +75,18 @@ I would traverse through all reports using some OS library functions, and parse 
 
 ### Matlabplotlib
 
-I was provided some primary code for graphing the data that I would use as a general outline. I would just read from the produced CSV file I made to graph all the results in a nicely fashion. Look at [grapher.py](design_stuff/grapher.py) for more details
+I was provided some primary code for graphing the data that I would use as a general outline. I would just read from the produced CSV file I made to graph all the results in a nicely fashion. Look at [grapher.py](design_stuff/grapher.py) for more details.
+
+![](design_stuff/grapher_output.png)
+
+**These results are not to be used outside of this program and are only an illustration
+of what to expect from my current code structure**
+
+*Thank Mckenzie for providing a outline helpful to synthesize the graph*
 
 ### CSV files
 
-Down below are the libraries I used. Look at [parser.py](design_stuff/parser.py) for more details of parsing. The results should look like [results.csv](results.csv).
+Down below are the libraries I used. Look at [parser.py](design_stuff/parser.py) for more details of parsing. The results should look like [results.csv](results.csv). And for the Google Sheet version, click [here](https://docs.google.com/spreadsheets/d/1Fyj-KPYSK6MaFwa9DmRD91LnzNpKH6pNq3ST01IPY_8/edit?usp=sharing) (personel only)
 
 ### Final results
 
