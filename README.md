@@ -22,6 +22,7 @@
 
 - [📝 Table of Contents](#-table-of-contents)
 - [About](#about)
+- [Required Software](#required-software)
 - [Spiral, Cadence, and Performance Analysis](#spiral-cadence-and-performance-analysis)
   - [Design synthesizing](#design-synthesizing)
   - [Retrieving results](#retrieving-results)
@@ -55,6 +56,15 @@ I would modify multiple tickle files, and make various result files digestable a
 Another research topic of interest that was looked upon was trascribing possibly used circuits into a Sum Of Products circuit. I would be provided ISCASS files to work on such circuit and boolean analyzation.
 Such tools ranged from <i>[pyeda](https://pyeda.readthedocs.io/en/latest/), [sympy](https://www.sympy.org/en/index.html), </i> and CMU's <i> [Cframe](https://htmlpreview.github.io/?https://raw.githubusercontent.com/iescobar1/research_s23/master/SOP_analysis/cframe_src/cframe_html/intro.html).</i> This required alot of looking for possible, reliable boolean algebra libraries and multiple implementations
 in rearranging the circuit in plausible implementations due to the gradilarity of the circuits.
+
+# Required Software
+- Cadence toolset
+- gpdk
+- pypy (optional)
+- sympy
+- pyeda
+- python3.0
+- matplotlib
 
 # Spiral, Cadence, and Performance Analysis
 
