@@ -1,5 +1,7 @@
 import os
 
+################################### I/O FILE ##############
+
 def writeFile(path, contents):
     with open(path,"wt") as f:
         f.write(contents)
@@ -7,6 +9,8 @@ def writeFile(path, contents):
 def readFile(path):
     with open(path, "rt") as f:
         return f.read()
+
+############################ Helper functions #############
 
 #assume we are at cwd:rtl
 def make_files(dirName, fileName):
@@ -36,7 +40,7 @@ def make_files(dirName, fileName):
 
     os.system("rm "+dirName+"/"+fileName)
             
-            
+############################ MAIN #########################
 
 rootDir = '/afs/ece.cmu.edu/usr/iescobar/private/research_s23/spiral_testing/digital/gcd/rtl'
 os.chdir(rootDir)

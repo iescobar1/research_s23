@@ -1,5 +1,0 @@
-Examples
-========
-
-Here are some examples of the *cframe* classes and functions in use.
-

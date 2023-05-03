@@ -1,6 +1,0 @@
-Introduction
-============
-
-*cframe* is a collection of classes and functions implemented in Python to allow you to easily work with circuits. It will parse an ISCAS89 netlist and build the circuit data structure. Then, using methods documented here, you can do things such as change circuit values, evaluate gates, add gates and wires, trace through the circuit, etc.
-
-This documentation is designed to provide all the information you need to work with circuits using *cframe*. This is the first version of this documentation, and as such it may contain errors. If you discover errors with the documentation (or code), or have suggestions or comments, please email them to bniewe@ece.cmu.edu.

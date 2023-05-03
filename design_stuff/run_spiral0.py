@@ -1,5 +1,6 @@
 import os
 
+############################I/O FILE ######################
 def writeFile(path, contents):
     with open(path,"wt") as f:
         f.write(contents)
@@ -8,6 +9,7 @@ def readFile(path):
     with open(path, "rt") as f:
         return f.read()
 
+############################ MAIN #########################
 
 workspace='spiral_testing_0/digital/gcd/'
 sim_arg_file = readFile(workspace+'verif/src/rtl.args')
