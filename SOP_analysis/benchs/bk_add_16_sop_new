@@ -1,0 +1,117 @@
+
+INPUT(G0)
+G0n = not(G0)
+INPUT(G1)
+G1n = not(G1)
+INPUT(G2)
+G2n = not(G2)
+INPUT(G3)
+G3n = not(G3)
+INPUT(G4)
+G4n = not(G4)
+INPUT(G5)
+G5n = not(G5)
+INPUT(G6)
+G6n = not(G6)
+INPUT(G7)
+G7n = not(G7)
+INPUT(G8)
+G8n = not(G8)
+INPUT(G9)
+G9n = not(G9)
+INPUT(G10)
+G10n = not(G10)
+INPUT(G11)
+G11n = not(G11)
+INPUT(G12)
+G12n = not(G12)
+INPUT(G13)
+G13n = not(G13)
+INPUT(G14)
+G14n = not(G14)
+INPUT(G15)
+G15n = not(G15)
+INPUT(G16)
+G16n = not(G16)
+INPUT(G17)
+G17n = not(G17)
+INPUT(G18)
+G18n = not(G18)
+INPUT(G19)
+G19n = not(G19)
+INPUT(G20)
+G20n = not(G20)
+INPUT(G21)
+G21n = not(G21)
+INPUT(G22)
+G22n = not(G22)
+INPUT(G23)
+G23n = not(G23)
+INPUT(G24)
+G24n = not(G24)
+INPUT(G25)
+G25n = not(G25)
+INPUT(G26)
+G26n = not(G26)
+INPUT(G27)
+G27n = not(G27)
+INPUT(G28)
+G28n = not(G28)
+INPUT(G29)
+G29n = not(G29)
+INPUT(G30)
+G30n = not(G30)
+INPUT(G31)
+G31n = not(G31)
+OUTPUT(G49)
+OUTPUT(G94)
+OUTPUT(G95)
+OUTPUT(G96)
+OUTPUT(G97)
+OUTPUT(G98)
+OUTPUT(G99)
+OUTPUT(G100)
+OUTPUT(G101)
+OUTPUT(G102)
+OUTPUT(G103)
+OUTPUT(G104)
+OUTPUT(G105)
+OUTPUT(G106)
+OUTPUT(G107)
+OUTPUT(G108)
+OUTPUT(G109)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

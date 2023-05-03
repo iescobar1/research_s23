@@ -1,0 +1,7 @@
+Documentation
+=============
+
+.. automodule:: cframe
+    :members:
+    :undoc-members:
+    :show-inheritance:
