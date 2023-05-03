@@ -158,7 +158,6 @@ links:
         
     csv.writeheader() : void
         Required to making the file header (aka first row of the csv file)
-        Void
 
     csv.writerows(result_list) : void
         Writes all the rows in the csv file
@@ -177,7 +176,21 @@ and further parallelization.
 
 ## Findings
 
+- When using SymPy and Pyeda, they both seemed to have issues when it came to larger Inputs/variables.
+One of these issues was that a recurssion bound is reach when simplifying, this bound is a normal
+python constraint to prevent segfaults or undefined behavior. If we extended this limit, we do indeed achieve this seg_fault.
+
+- Another issue is that expr() for sympy is not the most useful and shouldn't be used as it converts
+strings to boolean expressions that are ill'y formated half the time or throws a error otherwise.
+
+- I would recommend using pypy in the future for better speedup and computational usage. Pypy was used
+  in the second half of the exploration and didn't have recursion limits from what I remember
+- One famouse algorithm that might be of use in the future is the [Quine-McClusky Algorithm (wiki link)](https://en.wikipedia.org/wiki/Quine-McCluskey_algorithm) or the [expresso heuristic logic minimizer (wiki_link)](https://en.wikipedia.org/wiki/Espresso_heuristic_logic_minimizer). These are defintely useful and are used in these libraries aswell.
+
 ## Deriving Sum Of Products
+
+When trying to derive the sum of products, I had 2 approaches which used a combination of the libraries
+I found. If you read the [sum_of_products.py](SOP_analysis/sum_of_products.py), there should be a parameter to choose between the 2 versions called *use_version_0*
 
 ### *Version 0* &nbsp;&nbsp;&nbsp;[SOP_iter0.py](SOP_analysis/SOP_iter0.py)
 
@@ -186,8 +199,7 @@ and record each output thats value held true. This would create a data structure
 The only problem left is to simplify repition or unnecesary logic.
 
 I would use *SymPy* SOPform() to format it into a easily parsable expression then string. Before I used to use Simplify from
-the sympy library but that did not prove benefical after 8 input expressions. Therefore no simplifications are technically
-done in the currently commited code 
+the sympy library but that did not prove benefical after 8 input expressions. Therefore no simplifications are technically done in the currently commited code.
 
 ### *Version 1* &nbsp;&nbsp;&nbsp;[SOP_iter1.py](SOP_analysis/SOP_iter1.py)
 
@@ -197,14 +209,26 @@ and record a string illustrating the boolean expression.
 
 Once I have the boolean expression, I would use
 to_dnf() from the *Pyeda* library and convert the expression to a SOP. This would naturally be simplified
-unless it was a large amount of inputs. At this point, I could also use *SymPy's* to_dnf() function aswell
+unless it was a large amount of inputs. At this point, I could also use *SymPy's* dnf() function aswell
 but this won't prove helpful as it does the same thing if not worse (later explained in findings).
 
 ## Building the ISCAS89 SOP file
 
+In the writer file, [ISCASS_WRITER.py](SOP_analysis/ISCASS_writer.py), I take a boolean expression
+that is given to us and write it into a file script. The boolean expression MUST be in a sumOfProducts
+format for iterative purposes. This function resursivly makes a string reading the sumOfProducts expression
+with in-order Traversal of each of the subexpressions.
 
+As we make the circuit, one problem we have is repetivitive logic, This is taken into consideration by having a dict holding all the history of gates made called *and_gate_his* and *or_gate_his*.
 
 ## Conclusion
+
+There can definitely be more work done in the boolean expression simplification without the large
+dependcy. The use of a cpp file that does the boolean simplification would be the most logical route. 
+The SOP simplification files would be no more but we would use a similar ISCASS_writer.py file to
+synthesize the code.
+
+Overall, it was very fustrating how uncooperative some of the libraries and tools were for larger circuits but they were still of some use in smaller scales.
 
 ## Library functions used
 
@@ -213,8 +237,19 @@ links:
 - [boolean library](https://pyeda.readthedocs.io/en/latest/expr.html)
 - [minimization library](https://pyeda.readthedocs.io/en/latest/2llm.html?highlight=espresso#minimize-boolean-expressions)
 
-
+For version 1
 ```
+expr(string_expression) : pyeda.expression
+    parameters
+    -----
+    string_expression : str
+        a representation of a boolean expression
+        (e.g "a | (b&c)") 
+
+expression.to_dnf() : pyeda.expression
+    For a valid pyeda.expression, conver it to a SOP.
+        This should simplify the expression unless the expression has a large 
+        range of inputs
 
 ```
 
@@ -225,10 +260,65 @@ links:
 - [GeekForGeek SymPy usage](https://www.geeksforgeeks.org/what-are-the-logical-expressions-in-sympy/)
 
 
+For version 1
 
 ```
+to_dnf(expr, simplify=False, force=False ) : sympy.expr
+    For a valid pyeda.expression, conver it to a SOP.
+    parameters
+    -----
+    expr : str
+        boolean expression
+    simplify : bool
+        Toggle for the most simplified to be synthesized (8 input limited)
+    force : bool
+        Toggle to remove simplification limitations
+
+parse_expr(string_expresion) : sympy.expr
+    Returns a an sympy expression from the older version of sympy.
+    (e.g. "or( and(a, not('var', b))))")
+    NOTE: this function is unstable as it can not convert valid 
+        boolean expressions
+```
+For Version 0
+```
+SOPform(variables, minterms ) : sympy.expr
+    Finds the boolean map (completely unsimplified SOP)
+    parameters
+    -----
+    variables : list of strings
+        input variables
+    minterms : 2D array of 1s and 0s
+        this sub list represents a minterm for the expression
+    
+simpify_logic(expr, form=None, force= False) : sympy.expr
+    Finds most simplfied expression
+    parameters
+    ---
+    expr : sympy.expr
+        representation of the 
 
 ```
 
 ### Cframe
+links:
+- [Documentation](https://htmlpreview.github.io/?https://raw.githubusercontent.com/iescobar1/research_s23/master/SOP_analysis/cframe_src/cframe_html/cframe.html)
 
+```
+circuit.evaluate()
+
+circuit.inputs
+
+circuit.outputs
+
+circuit.gatemap
+
+gate.gatetype
+
+gate.fanin
+
+gate.name
+
+cf.roth
+
+```

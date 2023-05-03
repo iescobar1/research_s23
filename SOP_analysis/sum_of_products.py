@@ -79,11 +79,11 @@ def print_sop(sop_dict):
 testpath="SOP_analysis/"
 circuit_prev=cf.Circuit(testpath+"benchs/c17")
 
-use_version_1=False
+use_version_0=False
 
 #Version1:
 #retrieve truth tables w/roth.vals
-if use_version_1:
+if use_version_0:
     sumOfProducts=retrieve_sumOfProducts(circuit_prev)
     sumOfProducts=simplify_sumOfProducts(circuit_prev.inputs, sumOfProducts)
     print_sop(sumOfProducts)
