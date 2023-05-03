@@ -32,7 +32,12 @@
     - [OS library](#os-library)
     - [CSV library](#csv-library)
 - [Sum Of Products optimizations ](#sum-of-products-optimizations-)
-  - [Implementations](#implementations)
+  - [Findings](#findings)
+  - [Deriving Sum Of Products](#deriving-sum-of-products)
+    - [*Version 0*    SOP\_iter0.py](#version-0-sop_iter0py)
+    - [*Version 1*    SOP\_iter1.py](#version-1-sop_iter1py)
+  - [Building the ISCAS89 SOP file](#building-the-iscas89-sop-file)
+  - [Conclusion](#conclusion)
   - [Library functions used](#library-functions-used-1)
     - [Pyeda](#pyeda)
     - [Sympy ](#sympy-)
@@ -48,7 +53,7 @@ This process required the use of <i>Matplotlib, CSV managemtent, bash/python scr
 I would modify multiple tickle files, and make various result files digestable and accessible with spreadsheet graph representations.
 
 Another research topic of interest that was looked upon was trascribing possibly used circuits into a Sum Of Products circuit. I would be provided ISCASS files to work on such circuit and boolean analyzation.
-Such tools ranged from <i>[pyeda](https://pyeda.readthedocs.io/en/latest/), [sympy](https://www.sympy.org/en/index.html), </i> and CMU's <i> [Cframe](https://htmlpreview.github.io/?https://raw.githubusercontent.com/iescobar1/research_s23/master/cframe_src/cframe_html/intro.html).</i> This required alot of looking for possible, reliable boolean algebra libraries and multiple implementations
+Such tools ranged from <i>[pyeda](https://pyeda.readthedocs.io/en/latest/), [sympy](https://www.sympy.org/en/index.html), </i> and CMU's <i> [Cframe](https://htmlpreview.github.io/?https://raw.githubusercontent.com/iescobar1/research_s23/master/SOP_analysis/cframe_src/cframe_html/intro.html).</i> This required alot of looking for possible, reliable boolean algebra libraries and multiple implementations
 in rearranging the circuit in plausible implementations due to the gradilarity of the circuits.
 
 # Spiral, Cadence, and Performance Analysis
@@ -166,7 +171,40 @@ links:
 
 # Sum Of Products optimizations <a name="usage"></a>
 
-## Implementations
+When provided ISCAS89 files, I was tasked to turn the said circuit into a Sum Of Products circuit that was
+the most simplified. This would be tested in further research to see how this can provide a utilization benefit
+and further parallelization.
+
+## Findings
+
+## Deriving Sum Of Products
+
+### *Version 0* &nbsp;&nbsp;&nbsp;[SOP_iter0.py](SOP_analysis/SOP_iter0.py)
+
+During my first approach, I decided to use cframe to iterate through all the possible input sequences
+and record each output thats value held true. This would create a data structure of unsimplified Sum Of Products intutively.
+The only problem left is to simplify repition or unnecesary logic.
+
+I would use *SymPy* SOPform() to format it into a easily parsable expression then string. Before I used to use Simplify from
+the sympy library but that did not prove benefical after 8 input expressions. Therefore no simplifications are technically
+done in the currently commited code 
+
+### *Version 1* &nbsp;&nbsp;&nbsp;[SOP_iter1.py](SOP_analysis/SOP_iter1.py)
+
+During my second approach, I decided that deriving a boolean expression first might be more cost efficenty
+during simplification. Therefore, for this route, I decided to iterate through all the circuits outputs
+and record a string illustrating the boolean expression. 
+
+Once I have the boolean expression, I would use
+to_dnf() from the *Pyeda* library and convert the expression to a SOP. This would naturally be simplified
+unless it was a large amount of inputs. At this point, I could also use *SymPy's* to_dnf() function aswell
+but this won't prove helpful as it does the same thing if not worse (later explained in findings).
+
+## Building the ISCAS89 SOP file
+
+
+
+## Conclusion
 
 ## Library functions used
 
