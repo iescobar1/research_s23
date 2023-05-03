@@ -7,6 +7,8 @@ from sympy.parsing.sympy_parser import *
 from sympy.logic.boolalg import *
 from pyeda.inter import *
 import sys
+
+#this is not required unless the scenamic is very large
 sys.setrecursionlimit(100000)
 
 def writeFile(path, contents):
