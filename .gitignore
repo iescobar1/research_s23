@@ -14,3 +14,6 @@ config.tcl
 gpdk045.tar.gz
 ece725_gpdk.bashrc
 
+.vscode/
+.__pycache__/
+
